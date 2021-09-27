@@ -10,8 +10,18 @@
  var desertMediumRootQuestion = { question: "desertMediumRootQuestion", transition: [] };
  var desertMediumStemQuestion = { question: "desertMediumStemQuestion", transition: [] };
  var desertMediumLeavesQuestion = { question: "desertMediumLeavesQuestion", transition: [] };
+
+ // For meadow
+ var meadowEasyRootQuestion = { question: "meadowEasyRootQuestion", transition: [] };
+ var meadowEasyStemQuestion = { question: "meadowEasyStemQuestion", transition: [] };
+ var meadowEasyLeavesQuestion = { question: "meadowEasyLeavesQuestion", transition: [] };
+ var meadowMediumRootQuestion = { question: "meadowMediumRootQuestion", transition: [] };
+ var meadowMediumStemQuestion = { question: "meadowMediumStemQuestion", transition: [] };
+ var meadowMediumLeavesQuestion = { question: "meadowMediumLeavesQuestion", transition: [] };
  
  // Append outgoing transition question to each question
+
+ // Transition for desert questions
 
  // transition for easy root question
  desertEasyRootQuestion.transition.push( { answer: "correct", feedback: "easy root feedback for correct choice", nextQuestion: desertMediumRootQuestion } );
@@ -37,7 +47,8 @@
 
  // transition for medium leaves question
  desertMediumLeavesQuestion.transition.push( { answer: "incorrect", feedback: "medium leaves feedback for incorrect choice", nextQuestion: desertEasyStemQuestion } );
- 
+ desertMediumLeavesQuestion.transition.push( { answer: "incorrect", feedback: "medium leaves feedback for incorrect choice", nextQuestion: desertEasyStemQuestion } );
+
 
  // Get access to button element by its unique ID string.
  document.getElementById("answer1").addEventListener("click", onClick1);
